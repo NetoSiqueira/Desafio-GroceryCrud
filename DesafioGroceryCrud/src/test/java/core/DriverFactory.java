@@ -20,7 +20,7 @@ public class DriverFactory {
                 case CHROME:
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("disable-notifications");
-                  //  chromeOptions.addArguments("--headless");
+                    chromeOptions.addArguments("--headless");
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(chromeOptions);
                     wait = new WebDriverWait(driver, 60);

@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class Suite{
+public class RunCucumberTest {
 
 
 }
