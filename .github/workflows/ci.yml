@@ -35,3 +35,6 @@ jobs:
 
       - name: Executando Test
         run: mvn test
+
+      - name: Gerando Relatorio
+        run: mvn verify -DskipTests
