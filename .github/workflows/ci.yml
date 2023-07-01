@@ -1,0 +1,37 @@
+name: Cucumber
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+    tags:
+      - '**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configurando Repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurando Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Configure WebDriver for Chrome
+        uses: nanasess/setup-chromedriver@v1
+        with:
+          chromedriver-version: '102.0.5005.61'
+
+      - name: Executando Test
+        run: mvn test
