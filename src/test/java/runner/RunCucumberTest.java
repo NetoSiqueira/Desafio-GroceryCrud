@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/feature",
         glue = "steps",
 //        tags = ("not @ignore"),
-        plugin = {"pretty", "html:target/cucumber-reports/cucumber.html", "json:target/cucumber-reports/cucumber.json"},
+        plugin = {"pretty", "html:target/cucumber-reports/cucumber-html-reports/index.html", "json:target/cucumber-reports/cucumber.json"},
         monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
