@@ -4,12 +4,15 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static core.DriverFactory.getDriver;
 
 public class Propriedades {
+
     public static boolean FECHAR_BROWSER = false;
     public static Browsers browser = Browsers.CHROME;
     public static Scenario scenario;
