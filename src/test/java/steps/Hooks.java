@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static core.DriverFactory.*;
+import static core.Propriedades.screenshot;
 
 public class Hooks {
     @Rule
@@ -30,9 +31,9 @@ public class Hooks {
 
     @After
     public void fechar(Scenario scenario) throws IOException {
-        TakesScreenshot screen = (TakesScreenshot) getDriver();
-        File arquivo =screen.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(arquivo, new File("target" + File.separator + "sreenshot" + File.separator  + scenario+ ".jpg"));
+        if (Propriedades.scenario.isFailed()) {
+            screenshot();
+        }
         if (Propriedades.FECHAR_BROWSER)
             killDriver();
     }
